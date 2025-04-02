@@ -1,4 +1,4 @@
-name: Onlyfave-website
+name: Pulumi-deploy-static
 description: A minimal AWS Python Pulumi program
 runtime:
   name: python
