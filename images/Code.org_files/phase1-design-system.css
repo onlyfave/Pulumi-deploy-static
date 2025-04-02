@@ -1,0 +1,284 @@
+/*
+   If you are changing the location of these files,
+   see the readme in this directory for more detail on manual steps to take when uploading new files.
+ */
+html {
+  font-size: 100%; }
+
+body {
+  font-size: 100%; }
+
+h1, h2, h3 {
+  font-family: "Barlow Semi Condensed Semibold", sans-serif;
+  margin-bottom: 1em; }
+
+h1 {
+  font-size: 3em;
+  line-height: 1.2;
+  color: #292F36; }
+
+h2 {
+  color: #292F36;
+  font-size: 2.125em;
+  line-height: 1.2; }
+
+h4 {
+  font-family: "Barlow Semi Condensed Medium", sans-serif;
+  font-size: 1.5em;
+  line-height: 1.2;
+  margin-bottom: 1em; }
+
+h6 {
+  color: #292F36;
+  font-size: 1em;
+  line-height: 1.2;
+  font-family: "Metropolis", sans-serif;
+  font-weight: 600;
+  font-style: normal; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0; }
+
+a {
+  color: #8C52BA;
+  text-decoration: underline; }
+  a:hover {
+    color: #6F488E;
+    text-decoration: underline; }
+
+.professional-learning-banner a {
+  text-decoration: none; }
+
+.header_right a {
+  text-decoration: none; }
+
+.tutorial-block, .courseblock-tall {
+  background-color: #F7F8FA; }
+
+p {
+  color: #292F36; }
+
+#signin {
+  flex-grow: unset; }
+
+#signup p {
+  font-size: 14px; }
+#signup a {
+  font-family: "Metropolis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1em; }
+#signup .signup input {
+  background-color: #F7F8FA; }
+#signup .signup .signup-field-label label {
+  color: #292F36;
+  font-family: "Metropolis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1em; }
+#signup .signup .submit {
+  font-family: "Metropolis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  padding: 10px 20px;
+  height: auto;
+  margin-right: 0;
+  background-color: #8C52BA;
+  border: 2px solid #8C52BA;
+  color: #FFFFFF; }
+  #signup .signup .submit:hover {
+    background-color: #6F488E;
+    border-color: #6F488E;
+    box-shadow: none; }
+  #signup .signup .submit:focus {
+    border-color: #009EB0; }
+  #signup .signup .submit:disabled {
+    color: #FFFFFF;
+    border-color: #D4D5D7;
+    background-color: #D4D5D7;
+    cursor: not-allowed; }
+
+#homepage-container .project_card > div {
+  background-color: #F7F8FA !important; }
+  #homepage-container .project_card > div:hover {
+    border-color: #6A6E73 !important; }
+#homepage-container .project_card div {
+  color: #292F36 !important; }
+  #homepage-container .project_card div a:hover {
+    text-decoration: none; }
+
+#classroom-sections table th, #uitest-personal-projects table th {
+  color: #FFFFFF !important;
+  background-color: #292F36 !important; }
+  #classroom-sections table th i, #uitest-personal-projects table th i {
+    color: #FFFFFF !important; }
+#classroom-sections table td, #uitest-personal-projects table td {
+  color: #292F36;
+  background-color: #F7F8FA; }
+  #classroom-sections table td i, #uitest-personal-projects table td i {
+    color: #292F36 !important; }
+
+.courseexplorer .grouprow {
+  background-color: #292F36; }
+  .courseexplorer .grouprow h6 {
+    color: #FFFFFF; }
+.courseexplorer .graderow {
+  background-color: #EAEBEB !important; }
+  .courseexplorer .graderow.numbered {
+    color: #292F36; }
+.courseexplorer .courserow {
+  background-color: #6A6E73; }
+.courseexplorer .arrow_box {
+  background-color: #FFFFFF; }
+  .courseexplorer .arrow_box .arrow_box_content {
+    color: #292F36; }
+    .courseexplorer .arrow_box .arrow_box_content .description {
+      font-size: 14px; }
+      .courseexplorer .arrow_box .arrow_box_content .description li, .courseexplorer .arrow_box .arrow_box_content .description a {
+        font-size: 14px; }
+    .courseexplorer .arrow_box .arrow_box_content .description, .courseexplorer .arrow_box .arrow_box_content a {
+      color: #292F36; }
+      .courseexplorer .arrow_box .arrow_box_content .description a, .courseexplorer .arrow_box .arrow_box_content a a {
+        font-family: "Metropolis", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        text-decoration: underline;
+        color: #8C52BA; }
+        .courseexplorer .arrow_box .arrow_box_content .description a:hover, .courseexplorer .arrow_box .arrow_box_content a a:hover {
+          color: #6F488E; }
+    .courseexplorer .arrow_box .arrow_box_content .launch {
+      font-family: "Metropolis", sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 1em !important;
+      padding: 10px 20px;
+      height: auto;
+      margin-right: 0;
+      background-color: #8C52BA;
+      border: 2px solid #8C52BA;
+      color: #FFFFFF;
+      line-height: unset; }
+      .courseexplorer .arrow_box .arrow_box_content .launch:hover {
+        background-color: #6F488E;
+        border-color: #6F488E;
+        box-shadow: none; }
+      .courseexplorer .arrow_box .arrow_box_content .launch:focus {
+        border-color: #009EB0; }
+      .courseexplorer .arrow_box .arrow_box_content .launch:disabled {
+        color: #FFFFFF;
+        border-color: #D4D5D7;
+        background-color: #D4D5D7;
+        cursor: not-allowed; }
+    .courseexplorer .arrow_box .arrow_box_content .course-explorer-gray-button {
+      font-family: "Metropolis", sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 1em !important;
+      color: #292F36;
+      background-color: #FFFFFF;
+      border: 2px solid #292F36;
+      border-radius: 4px;
+      line-height: unset; }
+      .courseexplorer .arrow_box .arrow_box_content .course-explorer-gray-button:hover {
+        background-color: #EAEBEB;
+        box-shadow: none; }
+      .courseexplorer .arrow_box .arrow_box_content .course-explorer-gray-button:focus {
+        border-color: #009EB0; }
+      .courseexplorer .arrow_box .arrow_box_content .course-explorer-gray-button:disabled {
+        color: #D4D5D7;
+        border-color: #D4D5D7;
+        background-color: #FFFFFF;
+        cursor: not-allowed; }
+.courseexplorer .professional-learning {
+  background-color: #009EB0;
+  color: #FFFFFF; }
+  .courseexplorer .professional-learning .course-explorer-gray-button {
+    font-family: "Metropolis", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: .8em !important;
+    background-color: #009EB0;
+    border: 2px solid #FFFFFF;
+    border-radius: 4px;
+    color: #FFFFFF;
+    box-shadow: none;
+    line-height: 30px; }
+    .courseexplorer .professional-learning .course-explorer-gray-button:hover {
+      background-color: #008291;
+      box-shadow: none; }
+    .courseexplorer .professional-learning .course-explorer-gray-button:focus {
+      border: 2px solid #009EB0; }
+    .courseexplorer .professional-learning .course-explorer-gray-button:disabled {
+      color: #FFFFFF;
+      border-color: #D4D5D7;
+      background-color: #D4D5D7;
+      cursor: not-allowed; }
+
+.hoc-overview-page {
+  color: #292F36;
+  font-size: 14px; }
+  .hoc-overview-page h3 {
+    color: #292F36; }
+  .hoc-overview-page .hoc-skinny-banner p {
+    color: #fff; }
+  .hoc-overview-page > a {
+    color: #8C52BA; }
+  .hoc-overview-page .tutorial-info {
+    background-color: #F7F8FA;
+    border: 1px solid #D4D5D7; }
+    .hoc-overview-page .tutorial-info .tutorial-info-guide a {
+      color: #8C52BA; }
+  .hoc-overview-page .full-resource-block {
+    border: 1px solid #D4D5D7; }
+    .hoc-overview-page .full-resource-block > a > img {
+      border: none !important; }
+    .hoc-overview-page .full-resource-block .activities-info {
+      border-left: 1px solid #D4D5D7;
+      background-color: #F7F8FA;
+      color: #292F36; }
+      .hoc-overview-page .full-resource-block .activities-info h2 {
+        color: #292F36; }
+  .hoc-overview-page .tutorial-gray {
+    font-family: "Metropolis", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1em !important;
+    padding: 10px 16px;
+    height: auto;
+    margin-right: 0;
+    background-color: #8C52BA;
+    border: 2px solid #8C52BA;
+    color: #FFFFFF; }
+    .hoc-overview-page .tutorial-gray:hover {
+      background-color: #6F488E;
+      border-color: #6F488E; }
+    .hoc-overview-page .tutorial-gray:focus {
+      border-color: #009EB0; }
+    .hoc-overview-page .tutorial-gray:disabled {
+      color: #FFFFFF;
+      border-color: #D4D5D7;
+      background-color: #D4D5D7;
+      cursor: not-allowed; }
+  .hoc-overview-page .course-container .teacher-guide a {
+    color: #8C52BA; }
+
+#projects-page .container .new-project-heading {
+  font-family: "Barlow Semi Condensed Medium", sans-serif !important;
+  font-size: 1.5em !important;
+  line-height: 1.2 !important; }
+#projects-page .container #uitest-public-projects .viewMoreLink:hover {
+  text-decoration: underline; }
+
+.newProject-button-tile:hover {
+  border-color: #6A6E73 !important; }
+
+.tutorial-promo-container.dance-party-container .tutorial-description {
+  color: #FFFFFF; }
+
+.full-resource-block .resource-title {
+  color: #292F36 !important; }
+
+.featured-project > a > div {
+  background-color: #F7F8FA; }
+
+/*# sourceMappingURL=phase1-design-system.css.map */
