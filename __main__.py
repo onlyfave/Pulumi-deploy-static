@@ -8,7 +8,14 @@ bucket = aws.s3.BucketV2("pulumi-deploy-bucket")
 
 
 # Disable Block Public Access to allow the policy update
-
+block_public_access = aws.s3.BucketPublicAccessBlockV2(
+    "blockPublicAccess",
+    bucket=bucket.id,
+    block_public_acls=False,
+    block_public_policy=False,
+    ignore_public_acls=False,
+    restrict_public_buckets=False
+)
 # Enable static website configuration
 website_config = aws.s3.BucketWebsiteConfigurationV2(
     "websiteConfig",
@@ -26,22 +33,19 @@ index_html = aws.s3.BucketObject(
 )
 
 # Public access policy (uncomment to make it publicly accessible)
-bucket_policy = aws.s3.BucketPolicy(
-    "bucketPolicy",
-    bucket=bucket.id,
-    policy=pulumi.Output.all(bucket.id).apply(lambda bucket_name: f"""{{
-      "Version": "2012-10-17",
-      "Statement": [
-        {{
-          "Effect": "Allow",
-          "Principal": "*",
-          "Action": "s3:GetObject",
-          "Resource": "arn:aws:s3:::{bucket_name}/*"
-        }}
-      ]
-    }}"""),
-    opts=pulumi.ResourceOptions(depends_on=[public_access_block])  # Ensure public access block is removed first
+bucket_policy = aws.s3.BucketPolicy("bucket-policy",
+    bucket=website_bucket.id,
+    policy=website_bucket.id.apply(lambda bucket_id: json.dumps({
+        "Version": "2012-10-17",
+        "Statement": [{
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": ["s3:GetObject"],
+            "Resource": [f"arn:aws:s3:::{bucket_id}/*"],
+        }]
+    }))
 )
+
 
 # Export bucket name and website URL
 pulumi.export("bucket_name", bucket.id)
