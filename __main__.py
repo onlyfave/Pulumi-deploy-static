@@ -6,17 +6,26 @@ import pulumi_aws as aws
 # Create an S3 bucket
 bucket = aws.s3.BucketV2("pulumi-deploy-bucket")
 
-# Disable public access blocking
-public_access_block = aws.s3.BucketPublicAccessBlock(
-    "public-access-block",
+
+# Disable Block Public Access to allow the policy update
+
+# Enable static website configuration
+website_config = aws.s3.BucketWebsiteConfigurationV2(
+    "websiteConfig",
     bucket=bucket.id,
-    block_public_acls=False,
-    block_public_policy=False,
-    ignore_public_acls=False,
-    restrict_public_buckets=False
+    index_document={"suffix": "index.html"},
+    error_document={"key": "error.html"}
 )
 
-# Create an S3 Bucket Policy to allow CloudFront access
+# Upload a sample index.html file
+index_html = aws.s3.BucketObject(
+    "index.html",
+    bucket=bucket.id,
+    source=pulumi.FileAsset("index.html"),  # Ensure this file exists in your project
+    content_type="text/html"
+)
+
+# Public access policy (uncomment to make it publicly accessible)
 bucket_policy = aws.s3.BucketPolicy(
     "bucketPolicy",
     bucket=bucket.id,
@@ -31,53 +40,10 @@ bucket_policy = aws.s3.BucketPolicy(
         }}
       ]
     }}"""),
-    opts=pulumi.ResourceOptions(depends_on=[public_access_block])
+    opts=pulumi.ResourceOptions(depends_on=[public_access_block])  # Ensure public access block is removed first
 )
 
-# Create an AWS CloudFront Origin Access Control (OAC)
-oac = aws.cloudfront.OriginAccessControl(
-    "oac",
-    name="PulumiCloudFrontOAC",
-    description="OAC for S3 Bucket",
-    origin_access_control_origin_type="s3",
-    signing_behavior="always",
-    signing_protocol="sigv4"
-)
-
-# Create a CloudFront distribution
-cdn = aws.cloudfront.Distribution(
-    "pulumi-cloudfront",
-    origins=[{
-        "domain_name": bucket.bucket_regional_domain_name,
-        "origin_id": bucket.id,
-        "origin_access_control_id": oac.id
-    }],
-    enabled=True,
-    default_root_object="index.html",
-    default_cache_behavior={
-        "target_origin_id": bucket.id,
-        "viewer_protocol_policy": "redirect-to-https",
-        "allowed_methods": ["GET", "HEAD"],
-        "cached_methods": ["GET", "HEAD"],
-        "forwarded_values": {
-            "query_string": False,
-            "cookies": {"forward": "none"},
-        },
-        "default_ttl": 3600,
-        "max_ttl": 86400,
-        "min_ttl": 0,
-    },
-    viewer_certificate={
-        "cloudfront_default_certificate": True
-    },
-    restrictions={
-        "geo_restriction": {
-            "restriction_type": "none",
-        }
-    }
-)
-
-# Export CloudFront URL
+# Export bucket name and website URL
 pulumi.export("bucket_name", bucket.id)
-pulumi.export("cloudfront_url", cdn.domain_name)
+pulumi.export("website_url", website_config.website_endpoint)
 
