@@ -2,13 +2,14 @@
 
 import pulumi
 import pulumi_aws as aws
+import json
 
 # Create an S3 bucket
 bucket = aws.s3.BucketV2("pulumi-deploy-bucket")
 
 
 # Disable Block Public Access to allow the policy update
-block_public_access = aws.s3.BucketPublicAccessBlockV2(
+block_public_access = aws.s3.BucketPublicAccessBlock(
     "blockPublicAccess",
     bucket=bucket.id,
     block_public_acls=False,
@@ -34,8 +35,8 @@ index_html = aws.s3.BucketObject(
 
 # Public access policy (uncomment to make it publicly accessible)
 bucket_policy = aws.s3.BucketPolicy("bucket-policy",
-    bucket=website_bucket.id,
-    policy=website_bucket.id.apply(lambda bucket_id: json.dumps({
+    bucket=bucket.id,
+    policy=bucket.id.apply(lambda bucket_id: json.dumps({
         "Version": "2012-10-17",
         "Statement": [{
             "Effect": "Allow",
