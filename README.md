@@ -1,7 +1,6 @@
 # Pulumi Deploy Static
 ![Website](https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fone-million.tech)
 ## License
-Pulumi
 
 ## Table of Contents
 - [Overview](#overview)
