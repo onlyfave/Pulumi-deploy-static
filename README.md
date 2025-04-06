@@ -18,31 +18,34 @@ Pulumi
 
 ---
 
-## Overview
+## 🌐Overview
 **Pulumi Deploy Static** is a project that utilizes Pulumi to provision and deploy a static website on AWS S3 while utilizing Cloudflare for domain management and CDN capabilities. 
 
 This project demonstrates the process of building and deploying a static website using Pulumi to [AWS/Azure/Google Cloud], showcasing a seamless deployment experience with infrastructure as code and modern DevOps practices.
 
 ---
 
-## Features
-- **Infrastructure as Code**: Define your cloud resources using code with Pulumi.
+## 🧪Features
+- **Hosting**: Deploy a public [AWS](https://aws.amazon.com) S3 Bucket to host a static site.
+- **Infrastructure as Code**: Define your cloud resources using code with [Pulumi](https://pulumi.com).
 - **Fast Delivery**: Serve your static content through Cloudflare’s global CDN.
-- **Version Control**: Keep track of your infrastructure changes alongside your code.
-- **Custom Domain**: Publish your site on a custom domain with SSL support provided by Cloudflare.
+- **Version Control**: Keep track of your infrastructure changes alongside your code with [GitHub](http://github.com).
+- **Custom Domain**: Publish your site on a custom domain with SSL support provided by [Cloudflare](https://cloudflare.com).
 
 ---
 
-## Prerequisites
+## 🧰Prerequisites
 Before starting, ensure you have the following tools installed and set up:
-
-- Node.js (v14.x or later)  
-- Pulumi CLI (latest version)  
-- AWS CLI (configured with your AWS credentials)  
-- Cloudflare API Token with domain edit permissions  
+  
+- ✅ Pulumi CLI installed ([Install Guide](https://www.pulumi.com/docs/get-started/install/))
+- ✅ Python 3.7+
+- ✅ AWS CLI configured with credentials (`aws configure`)  
+- ✅ A [Cloudflare](https://cloudflare.com) account
+- ✅ A simple static website (e.g., `index.html`)
+- ✅ Git & GitHub account 
 
 ---
-## File-structure
+## 📁File-structure
 ```bash
 .
 ├── __main__.py          # Pulumi program (Python)
@@ -55,10 +58,92 @@ Before starting, ensure you have the following tools installed and set up:
 └── README.md            # You're here!
 ```
 
-## Installation
+## 🚀 Installation Guide
 
 To get started with the project:
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/onlyfave/Pulumi-deploy-static.git  
 cd Pulumi-deploy-static
+```
+---
+
+### 2. Install Python Requirements
+Create a requirements.txt:
+```bash
+pulumi
+pulumi_aws
+pulumi_cloudflare
+```
+---
+### 3. Install Required Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+### 4. Pulumi stack code(__main.py__)
+````
+"""An AWS Python Pulumi program"""
+
+import pulumi
+import pulumi_aws as aws
+import json
+
+# Create an S3 bucket
+bucket = aws.s3.BucketV2("pulumi-deploy-bucket")
+
+
+# Disable Block Public Access to allow the policy update
+block_public_access = aws.s3.BucketPublicAccessBlock(
+    "blockPublicAccess",
+    bucket=bucket.id,
+    block_public_acls=False,
+    block_public_policy=False,
+    ignore_public_acls=False,
+    restrict_public_buckets=False
+)
+# Enable static website configuration
+website_config = aws.s3.BucketWebsiteConfigurationV2(
+    "websiteConfig",
+    bucket=bucket.id,
+    index_document={"suffix": "index.html"},
+    error_document={"key": "error.html"}
+)
+
+# Upload a sample index.html file
+index_html = aws.s3.BucketObject(
+    "index.html",
+    bucket=bucket.id,
+    source=pulumi.FileAsset("index.html"),  # Ensure this file exists in your project
+    content_type="text/html"
+)
+
+# Public access policy (uncomment to make it publicly accessible)
+bucket_policy = aws.s3.BucketPolicy("bucket-policy",
+    bucket=bucket.id,
+    policy=bucket.id.apply(lambda bucket_id: json.dumps({
+        "Version": "2012-10-17",
+        "Statement": [{
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": ["s3:GetObject"],
+            "Resource": [f"arn:aws:s3:::{bucket_id}/*"],
+        }]
+    }))
+)
+
+
+# Export bucket name and website URL
+pulumi.export("bucket_name", bucket.id)
+pulumi.export("website_url", website_config.website_endpoint)
+````
+
+## 🌍 Domain Configuration with Cloudflare
+Cloudflare acts as your DNS and CDN. In this setup:
+
+- A CNAME record is created in your Cloudflare zone to point to the S3 static website endpoint.
+
+- The record is proxied, enabling HTTPS via Cloudflare's edge servers.
+
+- You can enable “Always Use HTTPS” and Automatic HTTPS Rewrites from your Cloudflare dashboard under SSL/TLS > Edge Certificates.
