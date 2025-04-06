@@ -90,7 +90,7 @@ import pulumi_aws as aws
 import json
 
 # Create an S3 bucket
-bucket = aws.s3.BucketV2("pulumi-deploy-bucket")
+bucket = aws.s3.BucketV2("one-million.tech")
 
 
 # Disable Block Public Access to allow the policy update
