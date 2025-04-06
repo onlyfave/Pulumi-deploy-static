@@ -1,5 +1,5 @@
 # Pulumi Deploy Static
-
+![Website](https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fone-million.tech)
 ## License
 Pulumi
 
@@ -8,7 +8,7 @@ Pulumi
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [File-structure](File-structure)
-- [Installation](#installation)
+- [Installation-Guide](#installation-Guide)
 - [Configuration](#configuration)
 - [Deployment](#deployment)
 - [Usage](#usage)
@@ -58,7 +58,7 @@ Before starting, ensure you have the following tools installed and set up:
 └── README.md            # You're here!
 ```
 
-## 🚀 Installation Guide
+## 🚀 Installation-Guide
 
 To get started with the project:
 ### 1. Clone the repository
@@ -138,7 +138,18 @@ bucket_policy = aws.s3.BucketPolicy("bucket-policy",
 pulumi.export("bucket_name", bucket.id)
 pulumi.export("website_url", website_config.website_endpoint)
 ````
+### 5. Add Your Website Files
+Create a directory called static/ and include   your website content:
 
+```bash
+mkdir static
+/index.html
+
+```
+5. Deploy to the Cloud
+```bash
+pulumi up
+```
 ## 🌍 Domain Configuration with Cloudflare
 Cloudflare acts as your DNS and CDN. In this setup:
 
@@ -147,3 +158,12 @@ Cloudflare acts as your DNS and CDN. In this setup:
 - The record is proxied, enabling HTTPS via Cloudflare's edge servers.
 
 - You can enable “Always Use HTTPS” and Automatic HTTPS Rewrites from your Cloudflare dashboard under SSL/TLS > Edge Certificates.
+- 
+📌 License
+MIT License. Free to use and modify.
+
+python
+
+---
+
+Let me know if you'd like to turn this into a GitHub project with a logo badge, CI config, or if you're considering adding a custom CloudFront distribution later.
