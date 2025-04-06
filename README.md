@@ -9,9 +9,8 @@ Pulumi
 - [Prerequisites](#prerequisites)
 - [File-structure](File-structure)
 - [Installation-Guide](#installation-Guide)
-- [Configuration](#configuration)
-- [Deployment](#deployment)
-- [Usage](#usage)
+- [Domain Configuration](#configuration)
+- [Useful Resources](#Usefulresources)
 - [Contributing](#contributing)
 - [License](#license-1)
 - [Contact](#contact)
@@ -158,7 +157,25 @@ Cloudflare acts as your DNS and CDN. In this setup:
 - The record is proxied, enabling HTTPS via Cloudflare's edge servers.
 
 - You can enable “Always Use HTTPS” and Automatic HTTPS Rewrites from your Cloudflare dashboard under SSL/TLS > Edge Certificates.
-- 
+  
+## 📚 Useful Resources
+🚀 Pulumi Documentation
+
+[Pulumi Official Docs](https://www.pulumi.com/docs/)– Learn how to build, deploy, and manage cloud infrastructure using Pulumi.
+[Pulumi AWS Provider](https://www.pulumi.com/registry/packages/aws/api-docs/provider/) – Reference for using AWS resources with Pulumi.
+[Pulumi Cloudflare Provider](https://www.pulumi.com/registry/packages/cloudflare/) – Reference for managing Cloudflare resources using Pulumi.
+
+☁️ AWS Resources
+
+Hosting a Static Website on [Amazon S3](https://aws.amazon.com/pm/serv-s3/?trk=c8974be7-bc21-436d-8108-722e8ab912e1&sc_channel=ps&ef_id=CjwKCAjwzMi_BhACEiwAX4YZUNYVvpQW0NH25CwfxUp5gLAblA2GjLsuw_uxw3UZGg9uw3121I5JxxoCS2EQAvD_BwE:G:s&s_kwcid=AL!4422!3!645125274431!e!!g!!amazon%20s3!19574556914!145779857032&gclid=CjwKCAjwzMi_BhACEiwAX4YZUNYVvpQW0NH25CwfxUp5gLAblA2GjLsuw_uxw3UZGg9uw3121I5JxxoCS2EQAvD_BwE)
+
+
+🌐 Cloudflare Resources
+
+[Cloudflare Docs](https://developers.cloudflare.com/)
+[Using Cloudflare with S3](https://developers.cloudflare.com/workers/demos/) – Guide for serving static sites with Cloudflare and S3.
+
+
 📌 License
 MIT License. Free to use and modify.
 
@@ -166,4 +183,4 @@ python
 
 ---
 
-Let me know if you'd like to turn this into a GitHub project with a logo badge, CI config, or if you're considering adding a custom CloudFront distribution later.
+> *🏆 This project was built as part of the Pulumi Static Website Challenge — powered by Pulumi, AWS, and Cloudflare.*
