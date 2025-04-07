@@ -175,8 +175,15 @@ Cloudflare acts as your DNS and CDN. In this setup:
 - [Using Cloudflare with S3](https://developers.cloudflare.com/workers/demos/) – Guide for serving static sites with Cloudflare and S3.
 
 
-📌 License
+## 📌 License
 MIT License. Free to use and modify.
+
+## 📬 Contacts
+[![X](https://img.shields.io/badge/X-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/only_fave)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/favour-onyeneke-2b2881297/)
+[![Dev.to](https://img.shields.io/badge/Dev.to-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white)](https://dev.to/onlyfave)
+[![Hashnode](https://img.shields.io/badge/Hashnode-2962FF?style=for-the-badge&logo=hashnode&logoColor=white)](https://hashnode.com/@onlyfave)
+
 
 python
 
