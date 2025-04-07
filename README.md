@@ -9,7 +9,7 @@
 - [File-structure](File-structure)
 - [Installation-Guide](#installation-Guide)
 - [Domain Configuration](#configuration)
-- [Useful Resources](#Usefulresources)
+- [Useful-Resources](#Useful-Resources)
 - [Contributing](#contributing)
 - [License](#license-1)
 - [Contact](#contact)
@@ -198,12 +198,12 @@ If you have suggestions, bug reports, improvements, or new features you'd like t
 6. **Open a Pull Request**
 --- 
 
-## 📌 License
+## 📌License
 MIT License. Free to use and modify.
 
 ---
 
-## 📬 Contact
+## 📬Contact
 [![X](https://img.shields.io/badge/X-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/only_fave)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/favour-onyeneke-2b2881297/)
 [![Dev.to](https://img.shields.io/badge/Dev.to-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white)](https://dev.to/onlyfave)
