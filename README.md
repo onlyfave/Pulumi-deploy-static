@@ -176,6 +176,26 @@ Cloudflare acts as your DNS and CDN. In this setup:
 
 ---
 
+## 🤝 Contributing
+
+Contributions are welcome and appreciated! 🙌
+Please make sure to read our [Code of Conduct](./CODE_OF_CONDUCT.md) before contributing.
+
+If you have suggestions, bug reports, improvements, or new features you'd like to add, here's how to contribute:
+
+1. **Fork the repository**
+2. **Create a new branch**
+   ```bash
+   git checkout -b your-feature-name
+3. **Make your changes**
+4. **Commit your changes**
+5. **Push to the forked repository**
+ ```bash
+ git push origin your-feature-name
+```
+6. **Open a Pull Request**
+--- 
+
 ## 📌 License
 MIT License. Free to use and modify.
 
