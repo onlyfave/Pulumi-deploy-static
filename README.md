@@ -179,8 +179,11 @@ Cloudflare acts as your DNS and CDN. In this setup:
 ## 🤝Contributing
 
 Contributions are welcome and appreciated! 🙌
+ 
+Please review the [Code of Conduct](./CODE_OF_CONDUCT.md) and follow the [Pull Request Guidelines](.github/PULL_REQUEST_TEMPLATE.md).
 
-Please make sure to read our [Code of Conduct](./CODE_OF_CONDUCT.md) before contributing.
+...
+
 
 If you have suggestions, bug reports, improvements, or new features you'd like to add, here's how to contribute:
 
