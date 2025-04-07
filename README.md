@@ -3,6 +3,7 @@
 
 ## Table of Contents
 - [Overview](#overview)
+- [Live site](#Live_Site)
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [File-structure](File-structure)
@@ -19,6 +20,13 @@
 **Pulumi Deploy Static** is a project that utilizes Pulumi to provision and deploy a static website on AWS S3 while utilizing Cloudflare for domain management and CDN capabilities. 
 
 This project demonstrates the process of building and deploying a static website using Pulumi to [AWS/Azure/Google Cloud], showcasing a seamless deployment experience with infrastructure as code and modern DevOps practices.
+
+---
+
+## 🖥️ Live Site
+**[one-million.tech](https://one-million.tech)**
+![Homepage](https://github.com/user-attachments/assets/440aae7f-30f5-4373-909f-2536cd3620b0)
+![Screenshot 2025-04-04 130707](https://github.com/user-attachments/assets/0803abc3-e239-406d-8575-ef5efb68aa11)
 
 ---
 
@@ -56,6 +64,8 @@ Before starting, ensure you have the following tools installed and set up:
 └── README.md            # You're here!
 ```
 
+---
+
 ## 🌍Configuration
 
 This project uses **Pulumi (Python)** for Infrastructure as Code (IaC) to deploy a static website to **AWS S3** with **Cloudflare** handling DNS and HTTPS.
@@ -70,14 +80,16 @@ This project uses **Pulumi (Python)** for Infrastructure as Code (IaC) to deploy
 
 1. **Install dependencies**
 
-   ```bash
-   python -m venv venv
-   source venv/bin/activate   # On Windows: venv\Scripts\activate
-   pip install -r requirements.txt
+ ```bash
+ python -m venv venv
+ source venv/bin/activate   # On Windows: venv\Scripts\activate
+ pip install -r requirements.txt
+   ```
+ ![Screenshot 2025-04-01 214248](https://github.com/user-attachments/assets/67966401-4ec9-4189-b3bb-d5a8727a5ec0)
    
 2. **Configure AWS credentials**
 
-Set your AWS credentials using environment variables or your preferred method.
+  Set your AWS credentials using environment variables.
 
   ```bash
   export AWS_ACCESS_KEY_ID=your-access-key-id
@@ -90,7 +102,7 @@ Log in to Pulumi:
   ```bash
   pulumi login
   ```
-4. **Creat a new stack (if not already created)**
+4. **Create a new stack (if not already created)**
  ```bash
  pulumi stack init dev
 ```
@@ -106,6 +118,7 @@ Once configured, deploy the infrastructure with:
 ```bash
 pulumi up
 ```
+
 ---
 
 ## 🚀Installation-Guide
@@ -198,7 +211,9 @@ mkdir static
 ```bash
 pulumi up
 ```
-  
+
+---
+
 ## 📚Useful Resources
 🚀 Pulumi Documentation
 
@@ -239,6 +254,7 @@ If you have suggestions, bug reports, improvements, or new features you'd like t
  git push origin your-feature-name
 ```
 6. **Open a Pull Request**
+   
 --- 
 
 ## 📌License
