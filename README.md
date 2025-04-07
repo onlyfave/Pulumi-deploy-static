@@ -144,7 +144,7 @@ pulumi_cloudflare
 ```bash
 pip install -r requirements.txt
 ```
-### 4. Pulumi stack code(__main.py__)
+### 4. Pulumi stack code to fully automate the process(__main.py__)
 ````
 """An AWS Python Pulumi program"""
 
@@ -199,6 +199,22 @@ bucket_policy = aws.s3.BucketPolicy("bucket-policy",
 # Export bucket name and website URL
 pulumi.export("bucket_name", bucket.id)
 pulumi.export("website_url", website_config.website_endpoint)
+
+import pulumi_cloudflare as cloudflare
+from pulumi import Config
+
+config = Config()
+zone_id = config.require("cloudflare:zoneId")
+domain = config.require("domain")
+
+# Point domain to S3 static website endpoint
+cf_record = cloudflare.Record("site-record",
+    zone_id=zone_id,
+    name=domain,
+    type="CNAME",
+    value=website_config.website_endpoint,
+    proxied=True
+)
 ````
 ### 5. Add Your Website Files
 Create a directory called static/ and include   your website content:
