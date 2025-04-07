@@ -24,7 +24,7 @@ This project demonstrates the process of building and deploying a static website
 
 ---
 
-## 🖥️ Live-site
+## 🖥️Live-site
 ### **[one-million.tech](https://one-million.tech)**
 ![Homepage](https://github.com/user-attachments/assets/440aae7f-30f5-4373-909f-2536cd3620b0)
 ![Screenshot 2025-04-04 130707](https://github.com/user-attachments/assets/0803abc3-e239-406d-8575-ef5efb68aa11)
