@@ -1,9 +1,10 @@
 # Pulumi Deploy Static
 ![Website](https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fone-million.tech)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
+
 ## Table of Contents
 - [Overview](#overview)
-- [Live site](#Live_Site)
+- [Live-site](#Live-site)
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [File-structure](File-structure)
@@ -17,14 +18,14 @@
 ---
 
 ## 🌐Overview
-**Pulumi Deploy Static** is a project that utilizes Pulumi to provision and deploy a static website on AWS S3 while utilizing Cloudflare for domain management and CDN capabilities. 
+**Pulumi Deploy Static** is a project that utilizes **[Pulumi](https://pulumi.com)** to provision and deploy a static website on AWS S3 while utilizing Cloudflare for domain management and CDN capabilities. 
 
 This project demonstrates the process of building and deploying a static website using Pulumi to [AWS/Azure/Google Cloud], showcasing a seamless deployment experience with infrastructure as code and modern DevOps practices.
 
 ---
 
-## 🖥️ Live Site
-**[one-million.tech](https://one-million.tech)**
+## 🖥️ Live-site
+### **[one-million.tech](https://one-million.tech)**
 ![Homepage](https://github.com/user-attachments/assets/440aae7f-30f5-4373-909f-2536cd3620b0)
 ![Screenshot 2025-04-04 130707](https://github.com/user-attachments/assets/0803abc3-e239-406d-8575-ef5efb68aa11)
 
