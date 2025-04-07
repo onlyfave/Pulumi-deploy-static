@@ -8,7 +8,7 @@
 - [Prerequisites](#prerequisites)
 - [File-structure](File-structure)
 - [Installation-Guide](#installation-Guide)
-- [Domain Configuration](#configuration)
+- [Configuration](#Configuration)
 - [Useful-Resources](#Useful-Resources)
 - [Contributing](#contributing)
 - [License](#license-1)
@@ -43,6 +43,7 @@ Before starting, ensure you have the following tools installed and set up:
 - ✅ Git & GitHub account 
 
 ---
+
 ## 📁File-structure
 ```bash
 .
@@ -56,6 +57,58 @@ Before starting, ensure you have the following tools installed and set up:
 └── README.md            # You're here!
 ```
 
+## 🌍Configuration
+
+This project uses **Pulumi (Python)** for Infrastructure as Code (IaC) to deploy a static website to **AWS S3** with **Cloudflare** handling DNS and HTTPS.
+
+- An AWS account with programmatic access (Access Key ID and Secret Access Key)
+- A Cloudflare account with a configured zone (domain)
+- [Pulumi CLI](https://www.pulumi.com/docs/get-started/install/) installed
+- [Python 3.7+](https://www.python.org/downloads/)
+- A Pulumi account (or self-managed backend)
+
+### Environment Setup
+
+1. **Install dependencies**
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   
+2. **Configure AWS credentials**
+
+Set your AWS credentials using environment variables or your preferred method.
+
+  ```bash
+  export AWS_ACCESS_KEY_ID=your-access-key-id
+  export AWS_SECRET_ACCESS_KEY=your-secret-access-key
+  ```
+3. **Configure Pulumi**
+
+Log in to Pulumi:
+
+  ```bash
+  pulumi login
+  ```
+4. **Creat a new stack (if not already created)**
+ ```bash
+ pulumi stack init dev
+```
+5. **Set Pulumi configuration values**
+```bash
+pulumi config set aws:region us-east-1  # or your preferred AWS region
+pulumi config set cloudflare:apiToken your-cloudflare-api-token --secret
+pulumi config set cloudflare:zoneId your-cloudflare-zone-id
+pulumi config set siteDomain yourdomain.com
+```
+6. **Deployment**
+Once configured, deploy the infrastructure with:
+```bash
+pulumi up
+```
+---
+
 ## 🚀Installation-Guide
 
 To get started with the project:
@@ -65,7 +118,6 @@ To get started with the project:
 git clone https://github.com/onlyfave/Pulumi-deploy-static.git  
 cd Pulumi-deploy-static
 ```
----
 
 ### 2. Install Python Requirements
 Create a requirements.txt:
@@ -74,7 +126,6 @@ pulumi
 pulumi_aws
 pulumi_cloudflare
 ```
----
 ### 3. Install Required Dependencies
 
 ```bash
@@ -148,14 +199,6 @@ mkdir static
 ```bash
 pulumi up
 ```
-## 🌍Domain Configuration with Cloudflare
-Cloudflare acts as your DNS and CDN. In this setup:
-
-- A CNAME record is created in your Cloudflare zone to point to the S3 static website endpoint.
-
-- The record is proxied, enabling HTTPS via Cloudflare's edge servers.
-
-- You can enable “Always Use HTTPS” and Automatic HTTPS Rewrites from your Cloudflare dashboard under SSL/TLS > Edge Certificates.
   
 ## 📚Useful Resources
 🚀 Pulumi Documentation
@@ -181,8 +224,6 @@ Cloudflare acts as your DNS and CDN. In this setup:
 Contributions are welcome and appreciated! 🙌
  
 Please review the [Code of Conduct](./CODE_OF_CONDUCT.md) and follow the [Pull Request Guidelines](.github/PULL_REQUEST_TEMPLATE.md).
-
-...
 
 
 If you have suggestions, bug reports, improvements, or new features you'd like to add, here's how to contribute:
