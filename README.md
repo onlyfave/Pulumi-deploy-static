@@ -217,13 +217,10 @@ cf_record = cloudflare.Record("site-record",
 )
 ````
 ### 5. Add Your Website Files
-Create a directory called static/ and include   your website content:
+Upload your website content to your S3 bucket that has been created:
 
-```bash
-mkdir static
-/index.html
+![Screenshot 2025-04-08 084845](https://github.com/user-attachments/assets/e4de2b7f-71ea-4a2a-93ee-6f395f99bfad)
 
-```
 5. Deploy to the Cloud
 ```bash
 pulumi up
