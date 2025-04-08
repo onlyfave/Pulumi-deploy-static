@@ -60,8 +60,13 @@ Before starting, ensure you have the following tools installed and set up:
 ├── Pulumi.dev.yaml      # Stack configuration (region, bucket name, etc.)
 ├── static/              # Folder containing website files (HTML, CSS, JS)
 │   ├── index.html
-│   └── styles.css
+│   └──css
+|   └──fonts/font-awesome-4.7.0/font-awesome-4.7.0
+|   └── images
+|   └── js
 ├── requirements.txt     # Python dependencies
+├── CODE_OF_CONDUCT.md
+├── PULL_REQUEST_TEMPLATE.md
 └── README.md            # You're here!
 ```
 
